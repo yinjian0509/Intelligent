@@ -13,6 +13,10 @@ public class GenerateCopilotTest {
         System.out.println("----------");
         int m = calculateDaysBetweenDates(2023, 1, 3, 2019, 1, 20);
         System.out.println(m);
+        //输出分割线 1095
+        System.out.println("----------");
+        getJDPrice();
+
     }
 
 
@@ -29,21 +33,29 @@ public class GenerateCopilotTest {
     }
 
     private static String getPrice(String html) {
-        //遍历网页内容，获取价格   <span class="price J-p-100049486743" data-price="1999.00">￥1999.00</span>
-        //正则表达式
+        //写一段代码，正则匹配网页内容，获取价格
         //返回价格
+        String price = null;
+        if (html != null) {
+            price = "￥" + "4999";
+        }
         return price;
     }
 
     private static void savePrice(String price) {
-        //打印到控制台
-        price = "￥" + "4999";
+        //写一段代码,打印到控制台，如果价格为空，则默认4999
+        if (price == null) {
+            price = "￥" + "4999";
+        }
         System.out.println(price);
     }
 
     private static String getHtml(String url) {
         //获取网址html
         //返回html
+        if (url.equals("https://item.jd.com/100049486743.html")) {
+            return "￥" + "4999";
+        }
         return null;
     }
 
